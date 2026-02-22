@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/9.jpg" type="image/jpeg">
+    <title>Vending machines — Premium Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+           body { font-family: 'Inter', sans-serif; background-color: #fafaf9; }
+    h1, h2, .font-serif { font-family: 'Playfair Display', serif; }
+
+    .coffee-gradient {
+        background: linear-gradient(135deg, #451a03 0%, #78350f 100%);
+    }
+
+    /* 3D effects */
+    .perspective-1000 { perspective: 1000px; }
+    .preserve-3d { transform-style: preserve-3d; }
+    .transform-gpu { transform: translateZ(50px); }
+
+            /* Button ripple effect */
+        .btn-ripple {
+            position: relative;
+            overflow: hidden;
+        }
+        .ripple {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: scale(0);
+            animation: ripple-animation 0.6s linear;
+            pointer-events: none;
+        }
+        @keyframes ripple-animation {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+
+    .card-container {
+        perspective: 1000px;
+    }
+
+    .coffee-card {
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        border: 1px solid #e7e5e4;
+        background: white;
+    }
+
+    .coffee-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 25px -5px rgba(69, 26, 3, 0.1);
+        border-color: #d97706;
+    }
+
+    .img-zoom {
+        overflow: hidden;
+        height: 300px;
+    }
+
+    .img-zoom img {
+        transition: transform 0.5s ease;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+        .coffee-card:hover .img-zoom img {
+            transform: scale(1.1);
+        }
+
+        #location-modal {
+            transition: all 0.3s ease-in-out;
+            backdrop-filter: blur(8px);
+        }
+            /* Slider styles */
+    .swiper { width: 100%; padding-top: 20px; padding-bottom: 50px; }
+    .swiper-slide { 
+        background-position: center; 
+        background-size: cover; 
+        width: 300px !important; 
+        height: 300px !important; 
+        border-radius: 24px; 
+        overflow: hidden; 
+    }
+    .swiper-slide img { display: block; width: 100%; height: 100%; object-fit: cover; }
+html {
+  scroll-behavior: smooth;
+}
+
+/* From Uiverse.io by adamgiebl */
+button.uiverse-btn,
+a.uiverse-btn {
+  font-family: inherit;
+  font-size: 20px;
+  background: linear-gradient(135deg, #451a03 0%, #78350f 100%);
+  color: white;
+  padding: 0.7em 1em;
+  padding-left: 0.9em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.1em;
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.2s;
+  cursor: pointer;
+  text-decoration: none;
+  line-height: 1.1;
+}
+
+button.uiverse-btn span,
+a.uiverse-btn span {
+  display: block;
+  margin-left: 0.3em;
+  transition: all 0.3s ease-in-out;
+}
+
+button.uiverse-btn svg,
+a.uiverse-btn svg {
+  display: block;
+  transform-origin: center center;
+  transition: transform 0.3s ease-in-out;
+}
+
+button.uiverse-btn:hover .svg-wrapper,
+a.uiverse-btn:hover .svg-wrapper {
+  animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
+button.uiverse-btn:hover svg,
+a.uiverse-btn:hover svg {
+  transform: translateX(1.2em) rotate(45deg) scale(1.1);
+}
+
+button.uiverse-btn:hover span,
+a.uiverse-btn:hover span {
+  transform: translateX(5em);
+}
+
+button.uiverse-btn:active,
+a.uiverse-btn:active {
+  transform: scale(0.95);
+}
+
+@keyframes fly-1 {
+  from {
+    transform: translateY(0.1em);
+  }
+
+  to {
+    transform: translateY(-0.1em);
+  }
+}
+
+.clients-love {
+  background: #f7f9fc;
+}
+
+.clients-love-card {
+  background: #ffffff;
+  border: 1px solid #e8edf3;
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.06);
+}
+
+.clients-love-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, #451a03 0%, #78350f 100%);
+  color: #fff;
+}
+
+.clients-love-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.snack-tech {
+  background: #f2f2f2;
+}
+
+.snack-tech-item {
+  position: relative;
+  padding-left: 4px;
+}
+
+.snack-tech-item .snack-num {
+  position: absolute;
+  top: -42px;
+  left: 0;
+  font-size: 132px;
+  font-weight: 800;
+  line-height: 1;
+  color: #dbe1ea;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+.snack-tech-item h4,
+.snack-tech-item p {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 1024px) {
+  .features-section h4 {
+    font-size: 1.75rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .features-section p {
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
+  }
+
+  .features-section span[class*="text-[120px]"] {
+    font-size: 78px !important;
+  }
+
+  .snack-tech-item .snack-num {
+    font-size: 92px;
+    top: -28px;
+  }
+}
+
+@media (max-width: 768px) {
+  #home {
+    padding-top: 7.5rem !important;
+  }
+
+  #home h1 {
+    font-size: 2.35rem !important;
+    line-height: 1.12 !important;
+  }
+
+  .uiverse-btn {
+    width: 100%;
+    font-size: 16px !important;
+    justify-content: center;
+  }
+
+  .img-zoom {
+    height: 230px;
+  }
+
+  .swiper-slide {
+    width: 240px !important;
+    height: 240px !important;
+  }
+
+  .features-section {
+    padding-top: 3.5rem !important;
+    padding-bottom: 3.5rem !important;
+  }
+
+  .features-section h4 {
+    font-size: 1.3rem !important;
+  }
+
+  .features-section p {
+    font-size: 0.98rem !important;
+  }
+
+  .clients-love {
+    padding-top: 3.5rem !important;
+    padding-bottom: 3.5rem !important;
+  }
+
+  .clients-love-card {
+    padding: 22px;
+  }
+
+  .snack-tech-item .snack-num {
+    font-size: 74px;
+    top: -18px;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .coffee-card:hover {
+    transform: none;
+    box-shadow: none;
+    border-color: #e7e5e4;
+  }
+
+  .coffee-card:hover .img-zoom img {
+    transform: none;
+  }
+
+  button.uiverse-btn:hover .svg-wrapper,
+  a.uiverse-btn:hover .svg-wrapper {
+    animation: none;
+  }
+
+  button.uiverse-btn:hover svg,
+  a.uiverse-btn:hover svg,
+  button.uiverse-btn:hover span,
+  a.uiverse-btn:hover span {
+    transform: none;
+  }
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+<nav class="fixed w-full z-50 bg-white/90 border-b border-stone-200 backdrop-blur-sm">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        
+        <!-- Logo and name -->
+        <div class="flex items-center gap-3">
+            <img src="img/9.jpg" alt="Logo" class="w-10 h-10 rounded-full object-cover border border-stone-200 shadow-sm">
+            <span class="text-2xl font-serif font-bold text-stone-900 tracking-tight">Vending machines</span>
+        </div>
+
+        <!-- Right menu -->
+<div class="hidden md:flex gap-8 text-sm font-medium text-stone-600 uppercase tracking-widest">
+    <a href="#home" class="hover:text-amber-700 transition-colors">Home</a>
+    <a href="#about" class="hover:text-amber-700 transition-colors">About us</a>
+    <a href="#coffee-machines" class="hover:text-amber-700 transition-colors">Coffee machines</a>
+    <a href="#snack-machines" class="hover:text-amber-700 transition-colors">Snack machines</a>
+    <a href="#locations" class="hover:text-amber-700 transition-colors">Locations</a>
+    <a href="#gallery" class="hover:text-amber-700 transition-colors">Gallery</a>
+</div>
+
+  
+        
+
+
+        <!-- Mobile layout spacer -->
+        <div class="w-10 md:hidden"></div>
+    </div>
+</nav>
+
+
+  <!-- Hero Section -->
+<section id="home" class="relative pt-40 pb-20 px-6 coffee-gradient text-white overflow-hidden">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 relative z-10">
+        
+        <!-- Left: text -->
+        <div class="md:w-1/2 text-left">
+            <span class="text-amber-400 font-bold tracking-widest uppercase text-sm">Artisan Coffee 24/7</span>
+            <h1 class="text-5xl md:text-7xl mt-4 mb-6 leading-tight font-bold">
+                The Perfect Pour,<br>Anytime, Anywhere.
+            </h1>
+            <p class="text-stone-300 text-lg mb-8 leading-relaxed max-w-lg">
+                Experience the rich aroma of freshly ground beans from our smart automated stations. We bring the Italian cafe experience to your workspace.
+            </p>
+            <div>
+                <a href="#locations" class="uiverse-btn btn-ripple">
+                    <div class="svg-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14"></path>
+                            <path d="m12 5 7 7-7 7"></path>
+                        </svg>
+                    </div>
+                    <span>Find a Station</span>
+                </a>
+            </div>
+        </div>
+
+       <!-- Right: 3D image -->
+<div class="md:w-1/2 flex justify-center md:justify-end perspective-1000">
+    <div id="tilt-card" class="relative transition-transform duration-200 ease-out preserve-3d cursor-pointer">
+        <!-- Hero image -->
+        <img src="img/7.jpg" alt="Spago Coffee" class="w-full max-w-[450px] rounded-[40px] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)] transform-gpu">
+        
+        <!-- Decorative glow -->
+        <div class="absolute -inset-4 bg-amber-500/20 blur-[60px] -z-10 rounded-full"></div>
+    </div>
+</div>
+
+
+    </div>
+</section>
+<!-- SECTION: 3 SIMPLE STEPS -->
+<section class="py-20 bg-gradient-to-r from-[#f5f7f9] to-[#eef2f5]">
+    <div class="max-w-6xl mx-auto px-6">
+        <h2 class="text-4xl md:text-5xl font-bold uppercase text-stone-900 leading-tight mb-10">
+            3 simple steps to<br>get started
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-[#f1f1f1] rounded-[24px] p-8 shadow-[0_18px_40px_rgba(0,0,0,0.06)]">
+                <h3 class="text-4xl font-semibold text-stone-900 mb-5 leading-snug">Submit your<br>enquiry</h3>
+                <p class="text-xl text-stone-700 leading-relaxed mb-8">Complete a quick form on our website</p>
+                <button id="open-steps-modal" type="button" class="uiverse-btn btn-ripple">
+                    <div class="svg-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14"></path>
+                            <path d="m12 5 7 7-7 7"></path>
+                        </svg>
+                    </div>
+                    <span>Leave an enquiry</span>
+                </button>
+            </div>
+
+            <div class="bg-[#f1f1f1] rounded-[24px] p-8 shadow-[0_18px_40px_rgba(0,0,0,0.06)]">
+                <h3 class="text-4xl font-semibold text-stone-900 mb-5 leading-snug">We get in touch<br>with you</h3>
+                <p class="text-xl text-stone-700 leading-relaxed">
+                    We answer all your questions about the equipment, lease terms and setup.
+                </p>
+            </div>
+
+            <div class="bg-[#f1f1f1] rounded-[24px] p-8 shadow-[0_18px_40px_rgba(0,0,0,0.06)]">
+                <h3 class="text-4xl font-semibold text-stone-900 mb-5 leading-snug">Agreement and<br>installation</h3>
+                <p class="text-xl text-stone-700 leading-relaxed">
+                    Our manager arranges the details and helps position the machine at your site.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION: FEATURES -->
+<section id="coffee-machines" class="features-section py-20 bg-[#f2f2f2]">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 xl:grid-cols-[1fr_auto_1fr] gap-10 items-center">
+            <div class="space-y-8">
+                <div class="relative pl-2">
+                    <span class="absolute -top-8 left-0 text-[120px] leading-none font-extrabold text-slate-200/70 select-none pointer-events-none">01</span>
+                    <h4 class="relative text-4xl font-extrabold text-stone-900 mb-3">Freshly Ground Coffee</h4>
+                    <p class="relative text-2xl text-stone-700 leading-relaxed">Delivers rich flavour and crema.</p>
+                </div>
+                <div class="relative pl-2">
+                    <span class="absolute -top-8 left-0 text-[120px] leading-none font-extrabold text-slate-200/70 select-none pointer-events-none">02</span>
+                    <h4 class="relative text-4xl font-extrabold text-stone-900 mb-3">Touchscreen</h4>
+                    <p class="relative text-2xl text-stone-700 leading-relaxed">Simple operation with a large display for quick and easy drink selection.</p>
+                </div>
+                <div class="relative pl-2">
+                    <span class="absolute -top-8 left-0 text-[120px] leading-none font-extrabold text-slate-200/70 select-none pointer-events-none">03</span>
+                    <h4 class="relative text-4xl font-extrabold text-stone-900 mb-3">Grinder</h4>
+                    <p class="relative text-2xl text-stone-700 leading-relaxed">Ensures even, precise grinding for perfect coffee and consistently reliable quality over time.</p>
+                </div>
+            </div>
+
+            <div class="flex justify-center">
+                <img src="img/tcn-ncf-7nv22.jpg" alt="TCN coffee vending machine" class="w-[320px] md:w-[390px] xl:w-[430px] rounded-[22px] shadow-[0_30px_55px_rgba(0,0,0,0.18)] object-contain">
+            </div>
+
+            <div class="space-y-8">
+                <div class="relative pl-2">
+                    <span class="absolute -top-8 left-0 text-[120px] leading-none font-extrabold text-slate-200/70 select-none pointer-events-none">04</span>
+                    <h4 class="relative text-4xl font-extrabold text-stone-900 mb-3">Precise Temperature Control</h4>
+                    <p class="relative text-2xl text-stone-700 leading-relaxed">Maintains the ideal temperature for each drink, ensuring stable coffee quality every time.</p>
+                </div>
+                <div class="relative pl-2">
+                    <span class="absolute -top-8 left-0 text-[120px] leading-none font-extrabold text-slate-200/70 select-none pointer-events-none">05</span>
+                    <h4 class="relative text-4xl font-extrabold text-stone-900 mb-3">Automatic Cleaning</h4>
+                    <p class="relative text-2xl text-stone-700 leading-relaxed">Keeps maintenance straightforward and operation clean at all times with minimal effort.</p>
+                </div>
+            </div>
+        </div>
+        <div class="mt-12 rounded-2xl bg-white/80 p-8 shadow-[0_20px_45px_rgba(0,0,0,0.08)]">
+            <h4 class="text-3xl md:text-4xl font-extrabold text-stone-900 mb-4">Safe Ingredients</h4>
+            <p class="text-xl md:text-2xl text-stone-700 leading-relaxed text-justify">We use only safe paper cups and ingredients in our vending machines. In addition to the coffee machine, a snack vending machine can be installed to meet the need for quick snacks.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION: SNACK MACHINE FEATURES -->
+<section id="snack-machines" class="snack-tech py-20">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 xl:grid-cols-[1fr_auto_1fr] gap-10 items-center">
+            <div class="space-y-10">
+                <div class="snack-tech-item">
+                    <span class="snack-num">01</span>
+                    <h4 class="text-4xl font-extrabold text-stone-900 mb-3">Touchscreen Product Selection</h4>
+                    <p class="text-2xl text-stone-700 leading-relaxed">Simple navigation with a large display for fast and convenient snack choices.</p>
+                </div>
+                <div class="snack-tech-item">
+                    <span class="snack-num">02</span>
+                    <h4 class="text-4xl font-extrabold text-stone-900 mb-3">Infrared Delivery Sensors</h4>
+                    <p class="text-2xl text-stone-700 leading-relaxed">Sensors confirm product drop to ensure reliable and accurate dispensing.</p>
+                </div>
+                <div class="snack-tech-item">
+                    <span class="snack-num">03</span>
+                    <h4 class="text-4xl font-extrabold text-stone-900 mb-3">Smart Stock Monitoring</h4>
+                    <p class="text-2xl text-stone-700 leading-relaxed">Online control helps track stock levels and sales performance in real time.</p>
+                </div>
+            </div>
+
+            <div class="flex justify-center">
+                <img src="img/snack-machine.png" alt="TCN snack vending machine" class="w-[320px] md:w-[420px] xl:w-[500px] object-contain">
+            </div>
+
+            <div class="space-y-10">
+                <div class="snack-tech-item">
+                    <span class="snack-num">04</span>
+                    <h4 class="text-4xl font-extrabold text-stone-900 mb-3">Flexible Payment Options</h4>
+                    <p class="text-2xl text-stone-700 leading-relaxed">Supports cash, coins, card and contactless payment for a smooth customer experience.</p>
+                </div>
+                <div class="snack-tech-item">
+                    <span class="snack-num">05</span>
+                    <h4 class="text-4xl font-extrabold text-stone-900 mb-3">Reliable Cooling System</h4>
+                    <p class="text-2xl text-stone-700 leading-relaxed">Keeps products fresh and maintains stable temperature for quality and safety.</p>
+                </div>
+            </div>
+        </div>
+        <div class="mt-12 rounded-2xl bg-white/80 p-8 shadow-[0_20px_45px_rgba(0,0,0,0.08)]">
+            <h4 class="text-3xl md:text-4xl font-extrabold text-stone-900 mb-4">Safe Ingredients</h4>
+            <p class="text-xl md:text-2xl text-stone-700 leading-relaxed text-justify">We use only safe paper cups and ingredients in our vending machines. In addition to the coffee machine, a snack vending machine can be installed to meet the need for quick snacks.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ENQUIRY MODAL -->
+<div id="steps-modal" class="fixed inset-0 z-[999] hidden items-center justify-center bg-black/35 p-4">
+    <div class="relative w-full max-w-[520px] rounded-[28px] bg-white p-8 md:p-10 shadow-2xl">
+        <button id="close-steps-modal" type="button" class="absolute right-5 top-4 text-4xl leading-none text-stone-700 hover:text-black bg-transparent !p-0 !rounded-none !shadow-none">&times;</button>
+
+        <form action="mailto:info@cibucoffee.co.uk" method="post" enctype="text/plain" class="space-y-4 mt-4">
+            <input type="text" name="name" placeholder="Name" class="w-full rounded-xl bg-[#eaf1f6] px-5 py-4 text-center text-stone-700 text-2xl outline-none">
+            <input type="tel" name="phone" placeholder="Phone number*" required class="w-full rounded-xl bg-[#eaf1f6] px-5 py-4 text-center text-stone-700 text-2xl outline-none">
+            <input type="email" name="email" placeholder="Email address*" required class="w-full rounded-xl bg-[#eaf1f6] px-5 py-4 text-center text-stone-700 text-2xl outline-none">
+            <textarea name="message" rows="3" placeholder="Your message*" required class="w-full rounded-xl bg-[#eaf1f6] px-5 py-4 text-center text-stone-700 text-2xl outline-none resize-none"></textarea>
+
+            <label class="flex items-start gap-3 text-sm leading-relaxed text-stone-600">
+                <input type="checkbox" required class="mt-1 h-4 w-4 rounded border-stone-300">
+                By clicking “Send”, you consent to the processing of your personal data.
+            </label>
+
+            <button type="submit" class="uiverse-btn btn-ripple mx-auto mt-2 w-full max-w-[260px]">
+                <div class="svg-wrapper">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14"></path>
+                        <path d="m12 5 7 7-7 7"></path>
+                    </svg>
+                </div>
+                    <span>Send</span>
+                </button>
+        </form>
+    </div>
+</div>
+
+<script>
+    (function () {
+        const openBtn = document.getElementById('open-steps-modal');
+        const modal = document.getElementById('steps-modal');
+        const closeBtn = document.getElementById('close-steps-modal');
+
+        if (!openBtn || !modal || !closeBtn) return;
+
+        const openModal = () => {
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        };
+
+        const closeModal = () => {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = '';
+        };
+
+        openBtn.addEventListener('click', openModal);
+        closeBtn.addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+    })();
+</script>
+<!-- Section: About Us -->
+<section id="about" class="py-20 px-6 bg-white">
+    <div class="max-w-4xl mx-auto text-center">
+        <div class="inline-block mb-6">
+            <span class="text-[#d4a373] font-bold tracking-[0.2em] uppercase text-sm">About us</span>
+            <div class="h-1 w-12 bg-[#d4a373] mx-auto mt-2"></div>
+        </div>
+        
+        <h2 class="text-4xl md:text-5xl font-serif text-stone-800 mb-8">Modern Vending Solutions</h2>
+
+        <div class="space-y-6 text-lg text-stone-600 leading-relaxed">
+            <p>
+                CIBU Vending offers modern vending machines dispensing hot and cold drinks, a variety of food products, and wholesome healthy snacks.
+            </p>
+            <p>
+                CIBU Vending provides a quality solution for setting up a vending point in your company. Depending on the number of employees or visitors, we supply modern equipment, excellent coffee and snacks, along with outstanding service.
+            </p>
+            <p>
+                Our coffee machines are built around convenience, reliability and proper service from day one.
+            </p>
+        </div>
+
+        <!-- Benefit icons -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+            <div class="p-4">
+                <div class="text-[#d4a373] text-3xl mb-3">🌙</div>
+                <h4 class="font-bold text-stone-800 mb-2">24/7 Operation</h4>
+                <p class="text-sm text-stone-500">Vending machines operate 24 hours a day, 7 days a week. Delivery, installation, and maintenance are free.</p>
+            </div>
+            <div class="p-4">
+                <div class="text-[#d4a373] text-3xl mb-3">💳</div>
+                <h4 class="font-bold text-stone-800 mb-2">Easy Payment</h4>
+                <p class="text-sm text-stone-500">Buy drinks and snacks by card or smartphone using contactless payment.</p>
+            </div>
+            <div class="p-4">
+                <div class="text-[#d4a373] text-3xl mb-3">🛠️</div>
+                <h4 class="font-bold text-stone-800 mb-2">Full-Service Management</h4>
+                <p class="text-sm text-stone-500">Machines are prepared, installed, and regularly maintained by qualified staff with prompt issue response.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- SECTION: WE LOVE OUR CLIENTS -->
+<section class="clients-love py-20 px-6">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl md:text-5xl text-stone-900 mb-4">We love our clients</h2>
+            <p class="text-stone-500 max-w-3xl mx-auto">Our coffee machines are built around convenience, reliability and proper service from day one.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <article class="clients-love-card">
+                <span class="clients-love-icon">
+                    <i data-lucide="clock-3"></i>
+                </span>
+                <h3 class="text-2xl font-bold text-stone-900 mb-3">24/7 availability</h3>
+                <p class="text-stone-600 leading-relaxed">Our vending machines operate around the clock, without breaks or weekends. Delivery, installation and servicing are provided free of charge.</p>
+            </article>
+
+            <article class="clients-love-card">
+                <span class="clients-love-icon">
+                    <i data-lucide="credit-card"></i>
+                </span>
+                <h3 class="text-2xl font-bold text-stone-900 mb-3">Convenient payment</h3>
+                <p class="text-stone-600 leading-relaxed">Customers can pay in whichever way suits them best: cash, bank card or smartphone.</p>
+            </article>
+
+            <article class="clients-love-card">
+                <span class="clients-love-icon">
+                    <i data-lucide="shield-check"></i>
+                </span>
+                <h3 class="text-2xl font-bold text-stone-900 mb-3">We handle everything</h3>
+                <p class="text-stone-600 leading-relaxed">Our qualified team prepares, installs and maintains each machine. If an issue appears, we fix or replace the unit quickly.</p>
+            </article>
+        </div>
+    </div>
+</section>
+    <!-- Locations Grid -->
+    <section id="locations" class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl text-stone-900 mb-4">Our Coffee Network</h2>
+                <p class="text-stone-500 max-w-xl mx-auto">Discover our premium automated stations across the city. Click on any station to see its location.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+               <!-- Station 1 -->
+<a href="https://maps.app.goo.gl/Dw3f482Gk9igZANcA?g_st=ic" target="_blank" class="coffee-card rounded-3xl overflow-hidden cursor-pointer block no-underline">
+    <div class="img-zoom"><img src="img/1.jpg"></div>
+    <div class="p-6">
+        <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold text-stone-900">Skyline Station</h3>
+            <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-bold">Active</span>
+        </div>
+        <p class="text-stone-500 text-sm flex items-center gap-1">
+            <i data-lucide="map-pin" class="w-4 h-4"></i> Meadow Park, Sudmeadow Rd, Hempsted, Gloucester GL2 5HD
+        </p>
+    </div>
+</a>
+
+               <a href="https://maps.app.goo.gl/mHG3vDzyqYjBzynU8?g_st=ic" target="_blank" class="coffee-card rounded-3xl overflow-hidden cursor-pointer block no-underline">
+    <div class="img-zoom"><img src="img/2.jpg"></div>
+    <div class="p-6">
+        <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold text-stone-900">Sparrows Wharf</h3>
+            <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-bold">Active</span>
+        </div>
+        <p class="text-stone-500 text-sm flex items-center gap-1">
+            <i data-lucide="map-pin" class="w-4 h-4"></i> 364 Bristol Rd, Gloucester
+        </p>
+    </div>
+</a>
+
+
+                <a href="https://maps.app.goo.gl/7ZVjdnX4iHz6Whz16?g_st=ic" target="_blank" class="coffee-card rounded-3xl overflow-hidden cursor-pointer block no-underline">
+    <div class="img-zoom"><img src="img/3.jpg"></div>
+    <div class="p-6">
+        <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold text-stone-900">Cirencester Rd</h3>
+            <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-bold">Active</span>
+        </div>
+        <p class="text-stone-500 text-sm flex items-center gap-1">
+            <i data-lucide="map-pin" class="w-4 h-4"></i> Charlton Kings, Cheltenham
+        </p>
+    </div>
+</a>
+
+               <a href="https://maps.app.goo.gl/YKdS3WRfpWVsxERPA?g_st=ic" target="_blank" class="coffee-card rounded-3xl overflow-hidden cursor-pointer block no-underline">
+    <div class="img-zoom"><img src="img/4.jpg"></div>
+    <div class="p-6">
+        <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold text-stone-900">Kayte Ln</h3>
+            <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-bold">Active</span>
+        </div>
+        <p class="text-stone-500 text-sm flex items-center gap-1">
+            <i data-lucide="map-pin" class="w-4 h-4"></i> Bishops Cleeve, Cheltenham
+        </p>
+    </div>
+</a>
+
+
+                <a href="https://maps.app.goo.gl/JcuUETtg9Gm9kgsW9?g_st=ic" target="_blank" class="coffee-card rounded-3xl overflow-hidden cursor-pointer block no-underline">
+    <div class="img-zoom"><img src="img/5.jpg"></div>
+    <div class="p-6">
+        <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold text-stone-900">Red Well Rd</h3>
+            <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-bold">Active</span>
+        </div>
+        <p class="text-stone-500 text-sm flex items-center gap-1">
+            <i data-lucide="map-pin" class="w-4 h-4"></i> Matson, Gloucester
+        </p>
+    </div>
+</a>
+
+
+               <a href="https://maps.app.goo.gl/drDauQT8XVVCBW7j7?g_st=ic" target="_blank" class="coffee-card rounded-3xl overflow-hidden cursor-pointer block no-underline">
+    <div class="img-zoom"><img src="img/6.jpg"></div>
+    <div class="p-6">
+        <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold text-stone-900">Longford Ln</h3>
+            <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-bold">Active</span>
+        </div>
+        <p class="text-stone-500 text-sm flex items-center gap-1">
+            <i data-lucide="map-pin" class="w-4 h-4"></i> Longlevens, Gloucester
+        </p>
+    </div>
+</a>
+<!-- Station card -->
+<a href="#" target="_blank" class="coffee-card rounded-3xl overflow-hidden cursor-pointer block no-underline">
+    <div class="img-zoom"><img src="img/20.jpg"></div>
+    <div class="p-6">
+        <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold text-stone-900">New Station 3</h3>
+            <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-bold">Active</span>
+        </div>
+        <p class="text-stone-500 text-sm flex items-center gap-1">
+            <i data-lucide="map-pin" class="w-4 h-4"></i> Address Here
+        </p>
+    </div>
+</a>
+
+<!-- Station card -->
+<a href="#" target="_blank" class="coffee-card rounded-3xl overflow-hidden cursor-pointer block no-underline">
+    <div class="img-zoom"><img src="img/21.jpg"></div>
+    <div class="p-6">
+        <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold text-stone-900">New Station 1</h3>
+            <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-bold">Active</span>
+        </div>
+        <p class="text-stone-500 text-sm flex items-center gap-1">
+            <i data-lucide="map-pin" class="w-4 h-4"></i> Address Here
+        </p>
+    </div>
+</a>
+
+<!-- Station card -->
+<a href="#" target="_blank" class="coffee-card rounded-3xl overflow-hidden cursor-pointer block no-underline">
+    <div class="img-zoom"><img src="img/22.jpg"></div>
+    <div class="p-6">
+        <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold text-stone-900">New Station 2</h3>
+            <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-bold">Active</span>
+        </div>
+        <p class="text-stone-500 text-sm flex items-center gap-1">
+            <i data-lucide="map-pin" class="w-4 h-4"></i> Address Here
+        </p>
+    </div>
+</a>
+
+
+     </div>
+</section>
+<!-- Gallery -->
+<section id="gallery" class="py-16 bg-white overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-3xl font-bold text-stone-900 mb-8 text-center">Our Gallery</h2>
+        
+        <!-- Slider wrapper -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <!-- Gallery slides -->
+                <div class="swiper-slide"><img src="img/1.jpg"></div>
+                <div class="swiper-slide"><img src="img/2.jpg"></div>
+                <div class="swiper-slide"><img src="img/3.jpg"></div>
+                <div class="swiper-slide"><img src="img/4.jpg"></div>
+                <div class="swiper-slide"><img src="img/5.jpg"></div>
+                <div class="swiper-slide"><img src="img/6.jpg"></div>
+                <div class="swiper-slide"><img src="img/7.jpg"></div>
+                <div class="swiper-slide"><img src="img/8.jpg"></div>
+                <div class="swiper-slide"><img src="img/9.jpg"></div>
+                <div class="swiper-slide"><img src="img/10.jpg"></div>
+                <div class="swiper-slide"><img src="img/11.jpg"></div>
+                <div class="swiper-slide"><img src="img/12.jpg"></div>
+                <div class="swiper-slide"><img src="img/17.jpg"></div>
+                <div class="swiper-slide"><img src="img/14.jpg"></div>
+                <div class="swiper-slide"><img src="img/15.jpg"></div>
+                <div class="swiper-slide"><img src="img/16.jpg"></div>
+            </div>
+            <!-- Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Partners & Contact -->
+<section class="py-20 bg-stone-50">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-center items-stretch gap-8">
+        
+        <!-- Our Partner -->
+        <div class="flex-1 bg-white p-8 md:p-10 rounded-[40px] shadow-xl border border-stone-100 flex flex-col">
+            <div class="text-center flex-grow">
+                <img src="img/spago-partner.jpg" alt="Spago" class="w-32 h-32 mx-auto mb-6 object-contain rounded-full border-2 border-stone-100 shadow-sm">
+                <h3 class="text-3xl font-bold text-stone-900 mb-2">Our Partner</h3>
+                <p class="text-amber-700 font-medium mb-4">Spago Bakers Quay</p>
+                <p class="text-stone-500 leading-relaxed">Handmade Crepes, Galettes & Tapas at the heart of Gloucester Docks. Visit our partner's official website for menus and bookings.</p>
+            </div>
+            <div class="mt-8">
+                <a href="https://www.spagogloucester.co.uk/" target="_blank" class="uiverse-btn btn-ripple w-full">
+                    <div class="svg-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14"></path>
+                            <path d="m12 5 7 7-7 7"></path>
+                        </svg>
+                    </div>
+                    <span>Visit Spago Website</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Get in Touch -->
+        <div class="flex-1 bg-white p-8 md:p-10 rounded-[40px] shadow-xl border border-stone-100 flex flex-col">
+            <div class="text-center mb-6">
+                <h3 class="text-3xl font-bold text-stone-900 mb-2">Get in Touch</h3>
+                <p class="text-stone-500">Contact us for investment or support</p>
+            </div>
+            
+            <div class="mb-6">
+                <a href="https://wa.me/message/UZN3CU2O23ZTL1" target="_blank" class="uiverse-btn btn-ripple w-full">
+                    <div class="svg-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14"></path>
+                            <path d="m12 5 7 7-7 7"></path>
+                        </svg>
+                    </div>
+                    <span>Chat on WhatsApp</span>
+                </a>
+            </div>
+
+            <form action="mailto:info@cibucoffee.co.uk" method="post" enctype="text/plain" class="space-y-4 border-t border-stone-50 pt-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <input type="text" name="first_name" placeholder="First Name *" required class="w-full px-5 py-3 rounded-xl border border-stone-200 bg-stone-50 outline-none focus:border-stone-900 transition-all">
+                    <input type="text" name="last_name" placeholder="Last Name" class="w-full px-5 py-3 rounded-xl border border-stone-200 bg-stone-50 outline-none focus:border-stone-900 transition-all">
+                </div>
+                <input type="email" name="email" placeholder="Email Address *" required class="w-full px-5 py-3 rounded-xl border border-stone-200 bg-stone-50 outline-none focus:border-stone-900 transition-all">
+                <textarea name="message" placeholder="Your Message" rows="3" required class="w-full px-5 py-3 rounded-xl border border-stone-200 bg-stone-50 outline-none focus:border-stone-900 transition-all"></textarea>
+                <button type="submit" class="uiverse-btn btn-ripple w-full">
+                    <div class="svg-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14"></path>
+                            <path d="m12 5 7 7-7 7"></path>
+                        </svg>
+                    </div>
+                    <span>Send Message</span>
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-[#1a1a1a] text-white py-16 w-full">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <!-- Left: logo and text -->
+            <div>
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 bg-white rounded-xl flex items-center justify-center">
+                        <img src="img/9.jpg" alt="Logo" class="w-7 h-7 object-contain rounded-lg">
+                    </div>
+                    <span class="text-xl font-bold tracking-tight">Vending machines</span>
+                </div>
+                <p class="text-stone-400 leading-relaxed max-w-xs">
+                    Redefining the coffee break with smart technology and premium Italian beans.
+                </p>
+            </div>
+
+            <!-- Centre: links -->
+            <div>
+                <h4 class="text-sm font-bold uppercase tracking-widest text-stone-500 mb-6">Quick Links</h4>
+                <ul class="space-y-4">
+                    <li><a href="#locations" class="text-stone-300 hover:text-white transition-colors">Our Locations</a></li>
+                    <li><a href="#" class="text-stone-300 hover:text-white transition-colors">Quality Standards</a></li>
+                </ul>
+            </div>
+
+            <!-- Right: contact -->
+            <div>
+                <h4 class="text-sm font-bold uppercase tracking-widest text-stone-500 mb-6">Contact</h4>
+                <ul class="space-y-4 text-stone-300">
+                 <li><a href="mailto:info@cibucoffee.co.uk" class="hover:text-white transition-colors">info@cibucoffee.co.uk</a></li>
+<li><a href="tel:+447899439687" class="hover:text-white transition-colors">+44 7899 439687</a></li>
+<li><a href="tel:+447495498750" class="hover:text-white transition-colors">+44 7495 498750</a></li>
+
+                </ul>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="border-t border-stone-800 mt-16 pt-8 text-center text-stone-500 text-sm">
+            <p>© 2026 Vending machines. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Back to top -->
+<a href="#home" class="fixed bottom-8 right-8 z-50 bg-amber-700 text-white p-3 rounded-full shadow-lg hover:bg-amber-800 transition-all hover:-translate-y-1" title="Go to top">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="m18 15-6-6-6 6"/>
+    </svg>
+</a>
+
+<script>
+  const card = document.getElementById('tilt-card');
+  const container = card ? card.parentElement : null;
+  if (container && card) {
+    container.addEventListener('mousemove', (e) => {
+      const { left, top, width, height } = container.getBoundingClientRect();
+      const x = (e.clientX - left) / width - 0.5;
+      const y = (e.clientY - top) / height - 0.5;
+      card.style.transform = `rotateY(${x * 30}deg) rotateX(${-y * 30}deg)`;
+    });
+    container.addEventListener('mouseleave', () => {
+      card.style.transform = 'rotateY(0deg) rotateX(0deg)';
+    });
+  }
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+    loop: true,
+    coverflowEffect: {
+      rotate: 30,
+      stretch: 0,
+      depth: 100,
+      modifier: 1,
+      slideShadows: true,
+    },
+    pagination: { el: ".swiper-pagination", clickable: true },
+    autoplay: { delay: 2500, disableOnInteraction: false },
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    if (window.lucide && typeof window.lucide.createIcons === "function") {
+      window.lucide.createIcons();
+    }
+
+    document.querySelectorAll(".btn-ripple").forEach(function (button) {
+      if (button.dataset.rippleBound === "1") return;
+      button.dataset.rippleBound = "1";
+
+      button.addEventListener("click", function (e) {
+        const rect = this.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const ripple = document.createElement("span");
+        ripple.className = "ripple";
+        ripple.style.left = x + "px";
+        ripple.style.top = y + "px";
+
+        this.appendChild(ripple);
+        setTimeout(() => ripple.remove(), 600);
+      });
+    });
+  });
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Base path for GitHub Pages: always points to the directory of the current page
+    var path = (window.location.pathname || "").replace(/#.*$/, "").replace(/\?.*$/, "");
+    if (/\/[^/]+\.[a-z0-9]+$/i.test(path)) {
+      path = path.slice(0, path.lastIndexOf("/") + 1);
+    } else {
+      path = path + (path.endsWith("/") ? "" : "/");
+    }
+    var basePath = window.location.origin + path;
+
+    const localImages = Array.from(document.querySelectorAll("img")).filter((img) => {
+      const src = (img.getAttribute("src") || "").trim();
+      return src && !/^([a-z]+:)?\/\//i.test(src) && !src.startsWith("data:");
+    });
+
+    localImages.forEach((img) => {
+      const original = img.getAttribute("src");
+      const fileName = original.replace(/^.*\//, "");
+      var resolved = basePath + "img/" + fileName;
+      img.setAttribute("src", resolved);
+    });
+  });
+</script>
+
+</body>
+</html>
